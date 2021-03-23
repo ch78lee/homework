@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cardwork.dbio.CardPayMngMapper">
+    <select id="selectCard" parameterType="String" resultType="com.cardwork.dbio.CardPayMng">
+    SELECT *
+    FROM CARD_PAY_MNG
+    WHERE MNG_NO = #{mng_no}
+    </select>
+
+    <insert id="insertCard" parameterType="com.cardwork.dbio.CardPayMng">
+    INSERT INTO CARD_PAY_MNG VALUES(
+        #{mng_no},
+        #{data_div},
+        #{card_data},
+        #{cancel_yn},
+        #{cancel_mng_no},
+        CURRENT_TIMESTAMP
+    )
+    </insert>
+    
+    <insert id="updateCard" parameterType="com.cardwork.dbio.CardPayMng">
+    UPDATE CARD_PAY_MNG
+    SET CANCEL_YN = #{cancel_yn}
+      , CANCEL_MNG_NO = #{cancel_mng_no}
+    WHERE MNG_NO = #{mng_no}
+    </insert>
+</mapper>
