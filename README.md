@@ -36,7 +36,6 @@
 
 결제정보 조회시 카드번호 마스킹은 정규표현식을 이용하여 처리함.
 
-----
 # 3. 실행방법
 Eclipse : Project Run As > Spring Boot App
 
